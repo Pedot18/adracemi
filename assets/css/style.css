@@ -9,6 +9,40 @@
   height: 50px;
 }
 
+body.dark-mode{
+
+  --background-color:#0F172A !important;
+
+  --default-color:#4a4d52 !important;
+
+  --heading-color:#FFFFFF !important;
+
+  --surface-color:#1E293B !important;
+
+  --contrast-color:#FFFFFF !important;
+
+  --nav-color:#E2E8F0 !important;
+
+  --nav-dropdown-background-color:#1E293B !important;
+
+  --nav-dropdown-color:#FFFFFF !important;
+
+}
+
+body.dark-mode .light-background{
+
+    --background-color:#111827 !important;
+
+    --surface-color:#1E293B !important;
+
+}
+
+body.dark-mode .dark-background{
+
+    --background-color:#020617 !important;
+
+}
+
 .logo-text {
   font-family: 'Poppins', sans-serif;
   font-size: 18px; /* Dikecilin dari 20px → 18px */
@@ -151,3 +185,76 @@
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
+
+
+  /* FORCE DARK MODE TEXT */
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6{
+
+    color:#FFFFFF !important;
+
+}
+
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode li{
+
+    color:#E2E8F0 !important;
+
+}
+
+body.dark-mode .service-item,
+body.dark-mode .stats-item,
+body.dark-mode .portfolio-item{
+
+    background:#1E293B !important;
+
+}
+
+body.dark-mode .service-item *,
+body.dark-mode .stats-item *,
+body.dark-mode .portfolio-item *{
+
+    color:white !important;
+
+}
+
+/* Services tetap putih meskipun dark mode aktif */
+
+body.dark-mode #services{
+
+    --background-color:#ffffff !important;
+
+    --surface-color:#ffffff !important;
+
+    background:#ffffff !important;
+
+}
+
+body.dark-mode #services h2,
+body.dark-mode #services p,
+body.dark-mode #services h3{
+
+    color:#273d4e !important;
+
+}
+
+body.dark-mode #services .service-item{
+
+    background:#ffffff !important;
+
+    color:#444444 !important;
+
+}
+
+body.dark-mode #services .service-item p{
+
+    color:#666666 !important;
+
+}
+

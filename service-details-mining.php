@@ -21,6 +21,17 @@
 
     <!-- Service Details Section -->
     <section id="service-details" class="service-details section">
+      
+    <div class="molecule-network">
+      <div class="atom a1"></div>
+      <div class="atom a2"></div>
+      <div class="atom a3"></div>
+      <div class="atom a4"></div>
+      
+      <div class="bond b1"></div>
+      <div class="bond b2"></div>
+      <div class="bond b3"></div>
+    </div>
 
       <div class="container">
 

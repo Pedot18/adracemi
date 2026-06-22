@@ -22,6 +22,17 @@
 
     <!-- Service Details Section -->
     <section id="service-details" class="service-details section">
+      
+      <div class="molecule-network">
+      <div class="atom a1"></div>
+      <div class="atom a2"></div>
+      <div class="atom a3"></div>
+      <div class="atom a4"></div>
+      
+      <div class="bond b1"></div>
+      <div class="bond b2"></div>
+      <div class="bond b3"></div>
+    </div>
 
       <div class="container">
 
@@ -29,53 +40,324 @@
 
           <div class="col-lg-4">
               <div class="services-list">
-                <a href="#" class="service-link active" data-target="pax">Bentonite API/OCMA</a>
-                <a href="#" class="service-link" data-target="nahs">Calcium Chloride (94-97%)</a>
-                <a href="#" class="service-link" data-target="balls">Drilling Detergents & Starch</a>
-                <a href="#" class="service-link" data-target="flocculants">Water & Wastewater Treatment</a>
-                <a href="#" class="service-link" data-target="frothers">Sodium Sulfide & Soda Ash Dense</a>
+                <a href="#" class="service-link active" data-target="bentonite"> Bentonite API / OCMA </a> 
+                <a href="#" class="service-link" data-target="calcium"> Calcium Chloride (94-97%) </a> 
+                <a href="#" class="service-link" data-target="benzalkonium"> Benzalkonium Chloride (50% / 80%) </a> 
+                <a href="#" class="service-link" data-target="drilling"> Drilling Detergents & Starch </a> 
+                <a href="#" class="service-link" data-target="water"> Water & Wastewater Treatment </a> 
+                <a href="#" class="service-link" data-target="tcca"> TCCA 90% </a> 
+                <a href="#" class="service-link" data-target="eva"> EVA </a> 
+                <a href="#" class="service-link" data-target="blowing"> Blowing Agent </a> 
+                <a href="#" class="service-link" data-target="sbr"> SBR </a> 
+                <a href="#" class="service-link" data-target="epoxy"> Epoxy Resin </a> 
+                <a href="#" class="service-link" data-target="polymer"> LDPE / LLDPE / HDPE </a>
               </div>
             </div>
 
 
           <div class="col-lg-8">
-              <div id="pax" class="service-content">
+              <div id="bentonite" class="service-content">
                 <img src="assets/img/portfolio/prod2.jpg" alt="" class="img-fluid services-img">
-                <h3>Amyl Xanthate (PAX) 90%</h3>
+                <h3>Bentonite API / OCMA</h3>
                     <p>
                      A powerful collector used in the flotation of sulfide minerals like copper, lead, zinc, and gold. It enhances separation efficiency by making mineral surfaces hydrophobic, allowing them to attach to air bubbles in flotation cells.
                     </p>
                     <ul>
-                      <li><i class="bi bi-check-circle"></i> <span>Application: Mining, mineral flotation.</span></li>
-                      <li><i class="bi bi-check-circle"></i> <span>Form: Granules.</span></li>
-                      <li><i class="bi bi-check-circle"></i> <span>Handling: Requires protective equipment due to toxicity and environmental impact.</span></li>
+                      <li> <i class="bi bi-check-circle"></i> <span>Application: Drilling fluids in oil & gas.</span> </li>
+                      <li> <i class="bi bi-check-circle"></i> <span>Form: Powder.</span> </li> 
+                      <li> <i class="bi bi-check-circle"></i> <span>Benefits: Improves mud viscosity and enhances drilling performance.</span> </li>
                     </ul>
               </div>
             
-              <div id="nahs" class="service-content" style="display: none;">
-                <img src="assets/img/portfolio/prod3.jpg" alt="" class="img-fluid services-img">
-                <h3>Sodium Hydrosulfide (NaHS) 70%</h3>
-                <p>Commonly used in the mining industry to depress copper sulfides and activate oxide minerals...</p>
+              <div id="calcium" class="service-content" style="display: none;">
+                <img src="assets/img/nonmining/calcium.jpg" alt="" class="img-fluid services-img">
+                <h3>Calcium Chloride (94-97%)</h3>
+                <p> Calcium Chloride is widely used in drilling fluids, dust control, and de-icing applications due to its excellent hygroscopic properties and high chemical stability. </p>
+                <ul>
+                  <li> <i class="bi bi-check-circle"></i> <span>Application: Oil & Gas, construction and chemical processing.</span> </li>
+                  <li> <i class="bi bi-check-circle"></i> <span>Form: Powder or flakes.</span> </li>
+                  <li> <i class="bi bi-check-circle"></i> <span>Benefits: Controls hydration of clays in drilling.</span> </li>
+                </ul>
               </div>
             
-              <div id="balls" class="service-content" style="display: none;">
-                <img src="assets/img/portfolio/prod4.jpg" alt="" class="img-fluid services-img">
-                <h3>Grinding Balls (133mm, 80mm, 30mm)</h3>
-                <p>High-quality steel grinding balls for ball mills, used in mining and cement industries...</p>
+              <div id="benzalkonium" class="service-content" style="display: none;">
+                <img src="assets/img/nonmining/benzalkonium.jpg" alt="" class="img-fluid services-img"> 
+                <h3>Benzalkonium Chloride (50% / 80%)</h3> 
+                <p> Benzalkonium Chloride is a disinfectant and biocide used for microbial control in oilfield applications, helping maintain hygiene and prevent bacterial contamination. </p> 
+                <ul> 
+                  <li> <i class="bi bi-check-circle"></i> <span>Application: Oilfield water treatment and industrial cleaning.</span> </li> 
+                  <li> <i class="bi bi-check-circle"></i> <span>Form: Liquid.</span> </li> 
+                  <li> <i class="bi bi-check-circle"></i> <span>Benefits: Controls bacterial growth in pipelines and tanks.</span> </li> 
+                </ul>
               </div>
             
-              <div id="flocculants" class="service-content" style="display: none;">
-                <img src="assets/img/portfolio/prod5.jpg" alt="" class="img-fluid services-img">
-                <h3>Flocculants & Coagulants</h3>
-                <p>Essential for water treatment, solid-liquid separation, and wastewater clarification...</p>
-              </div>
+              <div id="drilling" class="service-content" style="display:none;">
+
+            <img src="assets/img/nonmining/drilling.jpg" alt="" class="img-fluid services-img">
+
+            <h3>Drilling Detergents & Starch</h3>
+
+            <p>
+              Drilling Detergents and Starch are essential additives used to improve drilling fluid performance,
+              reduce torque and drag, and enhance wellbore stability during drilling operations.
+            </p>
+
+            <ul>
+
+              <li>
+                <i class="bi bi-check-circle"></i>
+                <span>Application: Oilfield drilling fluids and industrial drilling operations.</span>
+              </li>
+
+              <li>
+                <i class="bi bi-check-circle"></i>
+                <span>Form: Powder or liquid.</span>
+              </li>
+
+              <li>
+                <i class="bi bi-check-circle"></i>
+                <span>Benefits: Improves drilling efficiency, reduces fluid loss and stabilizes wellbore conditions.</span>
+              </li>
+
+            </ul>
+
+          </div>
             
-              <div id="frothers" class="service-content" style="display: none;">
-                <img src="assets/img/portfolio/prod6.jpg" alt="" class="img-fluid services-img">
-                <h3>Flotation Reagents & Specialty Frothers</h3>
-                <p>Used to enhance the flotation process, improving the recovery of valuable minerals...</p>
-              </div>
-            </div>
+              <div id="water" class="service-content" style="display:none;">
+
+          <img src="assets/img/nonmining/water.jpg" alt="" class="img-fluid services-img">
+
+          <h3>Water & Wastewater Treatment</h3>
+
+          <p>
+            Chemical solutions for water purification and industrial wastewater treatment,
+            helping industries maintain water quality and comply with environmental standards.
+          </p>
+
+          <ul>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Products: Sodium Hydroxide (NaOH) and Activated Carbon.</span>
+            </li>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Application: Water purification and industrial wastewater treatment.</span>
+            </li>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Benefits: Improves water quality and neutralizes acidic waste.</span>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+
+        <div id="tcca" class="service-content" style="display:none;">
+
+          <img src="assets/img/nonmining/tcca.jpg" alt="" class="img-fluid services-img">
+
+          <h3>TCCA 90% (Trichloroisocyanuric Acid)</h3>
+
+          <p>
+            TCCA 90% is a powerful disinfectant used in water treatment applications,
+            including swimming pools, industrial water systems and municipal water sanitation.
+          </p>
+
+          <ul>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Application: Water sanitation and water treatment.</span>
+            </li>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Form: Tablet or powder.</span>
+            </li>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Benefits: Long-lasting disinfection effect and effective microbial control.</span>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+
+        <div id="eva" class="service-content" style="display:none;">
+
+          <img src="assets/img/nonmining/eva.jpg" alt="" class="img-fluid services-img">
+
+          <h3>Ethylene Vinyl Acetate (EVA)</h3>
+
+          <p>
+            EVA is a key material used in the production of shoe soles,
+            providing flexibility, durability and excellent shock absorption.
+          </p>
+
+          <ul>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Application: Shoe soles and adhesives.</span>
+            </li>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Form: Granules or sheets.</span>
+            </li>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Benefits: Lightweight, durable and shock-absorbing.</span>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+
+        <div id="blowing" class="service-content" style="display:none;">
+
+          <img src="assets/img/nonmining/blowing.jpg" alt="" class="img-fluid services-img">
+
+          <h3>Blowing Agent</h3>
+
+          <p>
+            Blowing Agents are used to create foam structures in rubber and plastic products,
+            improving flexibility and reducing material weight.
+          </p>
+
+          <ul>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Application: Foam production and footwear manufacturing.</span>
+            </li>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Form: Powder.</span>
+            </li>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Benefits: Produces lightweight and flexible materials.</span>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div id="sbr" class="service-content" style="display:none;">
+
+          <img src="assets/img/nonmining/sbr.jpg" alt="" class="img-fluid services-img">
+
+          <h3>Styrene Butadiene Rubber (SBR)</h3>
+
+          <p>
+            SBR is a synthetic rubber widely used in footwear and industrial applications
+            due to its excellent abrasion resistance, flexibility and durability.
+          </p>
+
+          <ul>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Application: Shoe soles, industrial rubber products and adhesives.</span>
+            </li>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Form: Solid rubber or latex.</span>
+            </li>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Benefits: High abrasion resistance, flexibility and good mechanical properties.</span>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+
+        <div id="epoxy" class="service-content" style="display:none;">
+
+          <img src="assets/img/nonmining/epoxy.jpg" alt="" class="img-fluid services-img">
+
+          <h3>Epoxy Resin</h3>
+
+          <p>
+            Epoxy Resin is a versatile thermosetting polymer widely used in coatings,
+            adhesives and industrial applications due to its strong bonding properties
+            and excellent chemical resistance.
+          </p>
+
+          <ul>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Application: Protective coatings, flooring, adhesives and electrical insulation.</span>
+            </li>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Form: Liquid or solid resin.</span>
+            </li>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Benefits: High adhesion strength, chemical resistance and thermal stability.</span>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+
+        <div id="polymer" class="service-content" style="display:none;">
+
+          <img src="assets/img/nonmining/polymer.jpg" alt="" class="img-fluid services-img">
+
+          <h3>LDPE / LLDPE / HDPE</h3>
+
+          <p>
+            Polyethylene materials widely used in packaging,
+            consumer products and industrial manufacturing,
+            offering excellent flexibility, durability and chemical resistance.
+          </p>
+
+          <ul>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Products: LDPE (Low Density Polyethylene), LLDPE (Linear Low Density Polyethylene) and HDPE (High Density Polyethylene).</span>
+            </li>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Application: Packaging films, plastic bags, containers, pipes and industrial products.</span>
+            </li>
+
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Benefits: High impact resistance, flexibility and excellent chemical resistance.</span>
+            </li>
+
+          </ul>
+
+        </div>
 
 
         </div>
