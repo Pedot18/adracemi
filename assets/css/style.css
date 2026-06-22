@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 50px;
+}
+
+.logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px; /* Dikecilin dari 20px → 18px */
+  font-weight: bold;
+  color: #2b8f1d;
+  position: relative;
+  z-index: 2;
+  margin: 3px 0;
+}
+
+/* Garis lengkung atas */
+.arc-top {
+  width: 100px;
+  height: 22px;
+  margin-bottom: 0px;
+}
+
+/* Garis lengkung bawah */
+.arc-bottom {
+  width: 100px;
+  height: 22px;
+  margin-top: 0px;
+}
+
+/* Update ketebalan garis */
+.arc-top path,
+.arc-bottom path {
+  stroke-width: 8px; /* Ketebalan dari 6px → 8px */
+  stroke: #007BFF; /* Warna biru */
+}
+
+    
+ 
+
+
+/* WhatsApp Floating Button */
+        .whatsapp-float {
+          position: fixed;
+          bottom: 20px;
+          left: 20px;
+          width: 60px;
+          height: 60px;
+          background-color: #25d366;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+          z-index: 1000;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          text-decoration: none;
+        }
+        
+        /* WhatsApp Icon */
+        .whatsapp-float img {
+          width: 35px;
+          height: 35px;
+        }
+        
+        /* Bubble Contact Us */
+        .whatsapp-float .bubble {
+          position: absolute;
+          left: 70px; /* Posisinya di sebelah kiri */
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: rgba(0, 0, 0, 0.8);
+          color: white;
+          padding: 8px 12px;
+          font-size: 14px;
+          border-radius: 5px;
+          white-space: nowrap;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.3s ease, transform 0.3s ease;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Segitiga kecil biar menyatu */
+        .whatsapp-float .bubble::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: -8px;
+          transform: translateY(-50%);
+          border-width: 5px;
+          border-style: solid;
+          border-color: transparent rgba(0, 0, 0, 0.8) transparent transparent;
+        }
+        
+        /* Hover efek */
+        .whatsapp-float:hover {
+          transform: scale(1.1);
+          box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        .whatsapp-float:hover .bubble {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(-50%) translateX(5px);
+        }
+
+
+
+
+
+  .client-slider {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .client-track {
+    display: flex;
+    width: 200%; /* Lebih panjang untuk looping */
+    animation: scroll 15s linear infinite;
+  }
+
+  .client-logo {
+    flex: 0 0 auto;
+    width: 210px; /* Sesuaikan ukuran */
+    margin: 0 15px;
+  }
+
+ .client-logo img {
+  max-width: 100%;
+  height: auto;
+  opacity: 1 !important;  /* Pastikan tidak ada efek transparan */
+  filter: none !important; /* Hilangkan efek abu-abu */
+  transition: filter 0.3s ease, opacity 0.3s ease; /* Hover tetap smooth */
+}
+
+/* Jika ada efek hover sebelumnya */
+.client-logo img:hover {
+  filter: brightness(0.9); /* Tambahkan efek hover ringan */
+}
+
+
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }

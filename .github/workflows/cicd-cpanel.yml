@@ -1,0 +1,28 @@
+name: Deploy ke cPanel
+
+on:
+  push:
+    branches:
+      - main  # Jalankan ketika push ke branch main
+
+jobs:
+  deploy:
+    name: Deploy ke cPanel
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Upload ke cPanel via SFTP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.CPANEL_HOST }}
+          username: ${{ secrets.CPANEL_USERNAME }}
+          password: ${{ secrets.CPANEL_PASSWORD }}
+          port: ${{ secrets.CPANEL_PORT }}
+          source: "."  # Kirim semua file dari repo
+          target: "public_html"  # Folder tujuan di cPanel
+
+      - name: Verifikasi Deployment
+        run: echo "Deployment ke cPanel berhasil!"
