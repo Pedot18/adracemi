@@ -8,6 +8,7 @@
         <h1>Product Details</h1>
         <p>Non Mining.</p>
         <p>Oil &Gas, Drilling & Industrial Chemicals</p>
+        <a href="contact.html" class="btn btn-primary">Contact Us</a>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
