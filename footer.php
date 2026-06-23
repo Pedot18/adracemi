@@ -36,6 +36,8 @@
     <div class="container copyright text-center mt-4">
      <p>© <span>Copyright</span> <strong class="px-1 sitename">PT Adra Cipta Chemindo</strong> <span>All Rights Reserved</span></p>
      
-    </div>
-
   </footer>
+
+  <!-- Auth modal and script integration -->
+  <?php include_once __DIR__ . '/auth_modal.php'; ?>
+  <script src="assets/js/auth.js"></script>

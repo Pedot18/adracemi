@@ -1,0 +1,335 @@
+/* auth.css */
+/* Premium CSS for Auth Modal and Contact Form Overlay */
+
+/* Colors & Variables */
+:root {
+  --auth-bg-light: #ffffff;
+  --auth-bg-dark: #1e293b;
+  --auth-text-light: #0f172a;
+  --auth-text-dark: #f8fafc;
+  --auth-primary: #0ea5e9; /* matching theme */
+  --auth-primary-hover: #0284c7;
+  --auth-border-light: #e2e8f0;
+  --auth-border-dark: #334155;
+  --auth-icon-color: #94a3b8;
+}
+
+/* Modal styling */
+.auth-modal-content {
+  background-color: var(--auth-bg-light);
+  color: var(--auth-text-light);
+  border: 1px solid var(--auth-border-light);
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .auth-modal-content {
+  background-color: var(--auth-bg-dark);
+  color: var(--auth-text-dark);
+  border-color: var(--auth-border-dark);
+}
+
+.auth-modal-header .btn-close {
+  padding: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.auth-modal-header .btn-close:hover {
+  transform: rotate(90deg);
+}
+
+body.dark-mode .auth-modal-header .btn-close {
+  filter: invert(1) grayscale(1) brightness(2);
+}
+
+/* Tab button custom pill styles */
+.animate-tabs {
+  background-color: #f1f5f9;
+  padding: 6px;
+  border-radius: 30px;
+}
+
+body.dark-mode .animate-tabs {
+  background-color: #0f172a;
+}
+
+.tab-btn {
+  border-radius: 24px !important;
+  color: #64748b !important;
+  font-weight: 500;
+  padding: 10px 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none !important;
+  background: transparent !important;
+}
+
+.tab-btn.active {
+  background-color: var(--auth-primary) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.4);
+}
+
+body.dark-mode .tab-btn.active {
+  background-color: var(--auth-primary) !important;
+  box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.6);
+}
+
+/* Title and typography */
+.auth-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.auth-subtitle {
+  color: #64748b;
+  font-size: 14px;
+}
+
+body.dark-mode .auth-subtitle {
+  color: #94a3b8;
+}
+
+/* Form controls and icons */
+.input-group-custom {
+  position: relative;
+}
+
+.input-group-custom .form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+body.dark-mode .input-group-custom .form-label {
+  color: #cbd5e1;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--auth-icon-color);
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 11px 16px 11px 40px;
+  border-radius: 10px;
+  border: 1px solid var(--auth-border-light);
+  background-color: #ffffff;
+  color: var(--auth-text-light);
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .auth-input {
+  border-color: var(--auth-border-dark);
+  background-color: #0f172a;
+  color: var(--auth-text-dark);
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: var(--auth-primary);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+}
+
+.auth-input:focus + .input-icon {
+  color: var(--auth-primary);
+}
+
+/* Buttons */
+.auth-btn {
+  background-color: var(--auth-primary);
+  color: #ffffff !important;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.2);
+}
+
+.auth-btn:hover {
+  background-color: var(--auth-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 8px -1px rgba(14, 165, 233, 0.3);
+}
+
+.auth-btn:active {
+  transform: translateY(0);
+}
+
+/* Alerts */
+.auth-alert {
+  font-size: 13px;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+}
+
+/* Animations */
+.animate-fade {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Navbar Logged In User Dropdown menu */
+.navmenu .dropdown-user-menu {
+  min-width: 160px;
+  border-radius: 12px;
+  border: 1px solid var(--auth-border-light);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  padding: 8px 0;
+  margin-top: 10px;
+}
+
+body.dark-mode .navmenu .dropdown-user-menu {
+  background-color: var(--auth-bg-dark);
+  border-color: var(--auth-border-dark);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.navmenu .dropdown-user-menu li a {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: var(--auth-text-light) !important;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+body.dark-mode .navmenu .dropdown-user-menu li a {
+  color: var(--auth-text-dark) !important;
+}
+
+.navmenu .dropdown-user-menu li a:hover {
+  background-color: #f1f5f9;
+  color: var(--auth-primary) !important;
+}
+
+body.dark-mode .navmenu .dropdown-user-menu li a:hover {
+  background-color: #334155;
+  color: var(--auth-primary) !important;
+}
+
+/* Glassmorphism Contact Form Lock Overlay */
+.contact-form-container {
+  position: relative;
+}
+
+.contact-lock-overlay {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 30px;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+body.dark-mode .contact-lock-overlay {
+  background: rgba(15, 23, 42, 0.65);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.lock-card {
+  max-width: 400px;
+  background: #ffffff;
+  padding: 30px 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f5f9;
+  animation: floatLockCard 4s ease-in-out infinite;
+}
+
+body.dark-mode .lock-card {
+  background: #1e293b;
+  border-color: #334155;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.lock-icon-container {
+  width: 60px;
+  height: 60px;
+  background-color: #f0fdf4;
+  color: #16a34a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px auto;
+  font-size: 24px;
+}
+
+body.dark-mode .lock-icon-container {
+  background-color: rgba(22, 163, 74, 0.15);
+}
+
+.lock-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--auth-text-light);
+}
+
+body.dark-mode .lock-title {
+  color: var(--auth-text-dark);
+}
+
+.lock-desc {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+body.dark-mode .lock-desc {
+  color: #94a3b8;
+}
+
+.lock-btn {
+  background-color: var(--auth-primary);
+  color: #ffffff !important;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 24px;
+  transition: all 0.3s;
+}
+
+.lock-btn:hover {
+  background-color: var(--auth-primary-hover);
+  transform: scale(1.03);
+}
+
+@keyframes floatLockCard {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}

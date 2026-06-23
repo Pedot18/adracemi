@@ -1,41 +1,59 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
+// forms/contact.php
+// Secure contact form handler requiring user login
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
+// Start session
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
+// 1. Enforce authentication
+if (!isset($_SESSION['user_id'])) {
+    http_response_code(403);
+    echo "Akses ditolak. Silakan login atau register terlebih dahulu untuk mengirim pesan.";
+    exit;
+}
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+// 2. Include database and email helpers
+require_once __DIR__ . '/../db.php';
+require_once __DIR__ . '/../mail_helper.php';
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
-
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
-
-  echo $contact->send();
+// 3. Process POST request
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = isset($_POST['name']) ? trim($_POST['name']) : '';
+    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
+    $subject = isset($_POST['subject']) ? trim($_POST['subject']) : '';
+    $message = isset($_POST['message']) ? trim($_POST['message']) : '';
+    
+    if (empty($name) || empty($email) || empty($subject) || empty($message)) {
+        http_response_code(400);
+        echo "Semua field input wajib diisi.";
+        exit;
+    }
+    
+    try {
+        // 4. Save submission details in database for tracking & backup
+        $stmt = $pdo->prepare("INSERT INTO contact_messages (user_id, name, email, subject, message) VALUES (?, ?, ?, ?, ?)");
+        $stmt->execute([
+            $_SESSION['user_id'],
+            $name,
+            $email,
+            $subject,
+            $message
+        ]);
+        
+        // 5. Send the email via custom mail helper (target: anggarenosugiarto@gmail.com)
+        send_contact_email($name, $email, $subject, $message);
+        
+        // 6. Return OK to trigger frontend success status in validate.js
+        echo "OK";
+        
+    } catch (PDOException $e) {
+        http_response_code(500);
+        echo "Gagal menyimpan pesan ke database: " . $e->getMessage();
+    }
+} else {
+    http_response_code(405);
+    echo "Metode request tidak diizinkan.";
+}
 ?>

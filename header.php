@@ -1,3 +1,12 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+// Include database connection
+require_once __DIR__ . '/db.php';
+?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -25,8 +34,17 @@
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/custom.css" rel="stylesheet">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="assets/css/auth.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+  <script>
+    window.isLoggedIn = <?php echo isset($_SESSION['user_id']) ? 'true' : 'false'; ?>;
+    window.loggedInUser = <?php echo isset($_SESSION['user_id']) ? json_encode([
+        'id' => $_SESSION['user_id'],
+        'name' => $_SESSION['user_name'],
+        'email' => $_SESSION['user_email']
+    ]) : 'null'; ?>;
+  </script>
 </head>
 
 <body class="index-page">
@@ -78,6 +96,18 @@
 
     <li><a href="index.php#stats">Pelanggan</a></li>
     <li><a href="index.php#contact">Kontak</a></li>
+    <?php if (isset($_SESSION['user_id'])): ?>
+      <li class="dropdown">
+        <a href="#" class="disable-click">
+          <i class="bi bi-person-circle me-1"></i> <?php echo htmlspecialchars($_SESSION['user_name']); ?> <i class="bi bi-chevron-down text-small"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-user-menu">
+          <li><a href="auth_action.php?action=logout"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+        </ul>
+      </li>
+    <?php else: ?>
+      <li><a href="#" class="navLoginBtn"><i class="bi bi-box-arrow-in-right me-1"></i>Login</a></li>
+    <?php endif; ?>
   </ul>
 
   <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

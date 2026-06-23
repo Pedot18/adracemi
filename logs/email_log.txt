@@ -1,0 +1,36 @@
+==================================================
+WAKTU KIRIM : 2026-06-23 04:23:57
+KEPADA      : anggarenosugiarto@gmail.com
+PENGIRIM    : Ren Sugiarto <anggarenosugiarto@gmail.com>
+SUBJEK      : Tanya Harga Flotation Reagents
+PESAN       : Halo ACC, saya butuh penawaran untuk Flotation Reagents 10 ton.
+STATUS MAIL : GAGAL (Koneksi SMTP lokal tidak dikonfigurasi)
+==================================================
+
+==================================================
+WAKTU KIRIM : 2026-06-23 04:25:32
+KEPADA      : anggarenosugiarto@gmail.com
+PENGIRIM    : Angga Reno <angga.reno99@gmail.com>
+SUBJEK      : Mau tanya soal kapur
+PESAN       : harga kaporit berapa?
+STATUS MAIL : GAGAL (Koneksi SMTP lokal tidak dikonfigurasi)
+==================================================
+
+==================================================
+WAKTU KIRIM : 2026-06-23 04:30:40
+KEPADA      : anggarenosugiarto@gmail.com
+PENGIRIM    : Angga Reno <angga.reno99@gmail.com>
+SUBJEK      : asda
+PESAN       : asdasd
+STATUS MAIL : GAGAL (Koneksi SMTP lokal tidak dikonfigurasi)
+==================================================
+
+==================================================
+WAKTU KIRIM : 2026-06-23 04:39:40
+KEPADA      : anggarenosugiarto@gmail.com
+PENGIRIM    : Angga Reno <angga.reno99@gmail.com>
+SUBJEK      : Mau tanya soal kapur
+PESAN       : dfsdfsd
+STATUS      : ✅ BERHASIL DIKIRIM
+==================================================
+

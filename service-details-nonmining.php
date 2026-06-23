@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-    <?php include("header.php"); ?>
+<?php include("header.php"); ?>
 
   <main class="main">
 
