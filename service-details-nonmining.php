@@ -7,9 +7,7 @@
       <div class="container position-relative">
         <h1>Product Details</h1>
         <p>Non Mining.</p>
-        <p>Oil &
-          
-        Gas, Drilling & Industrial Chemicals</p>
+        <p>Oil &Gas, Drilling & Industrial Chemicals</p>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
