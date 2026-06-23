@@ -30,6 +30,12 @@
 </head>
 
 <body class="index-page">
+  <script>
+    // Immediately apply saved theme to body to prevent flash
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+  </script>
     <!-- Load Header -->
     
 
@@ -91,20 +97,21 @@
   </header>
   <script>
 document.addEventListener("DOMContentLoaded", function(){
-
-    console.log("JS LOADED");
-
     const toggle = document.getElementById("theme-toggle");
-
-    console.log(toggle);
-
+    
+    // Set checkbox state based on body class
+    if (document.body.classList.contains("dark-mode")) {
+        toggle.checked = true;
+    }
+    
     toggle.addEventListener("change", function(){
-
-        console.log("CLICKED");
-
-        document.body.classList.toggle("dark-mode");
-
+        if (toggle.checked) {
+            document.body.classList.add("dark-mode");
+            localStorage.setItem("theme", "dark");
+        } else {
+            document.body.classList.remove("dark-mode");
+            localStorage.setItem("theme", "light");
+        }
     });
-
 });
 </script>
