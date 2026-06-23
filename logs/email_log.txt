@@ -43,3 +43,83 @@ PESAN       : hallo
 STATUS      : ✅ BERHASIL DIKIRIM
 ==================================================
 
+==================================================
+TIPE        : [ADMIN]
+WAKTU KIRIM : 2026-06-23 05:24:02
+KEPADA      : anggarenosugiarto@gmail.com
+PENGIRIM    : Ren Sugiarto <anggarenosugiarto@gmail.com>
+SUBJEK      : Tanya Harga Flotation Reagents
+PESAN       : Halo ACC, saya butuh penawaran untuk Flotation Reagents 10 ton.
+STATUS      : ✅ BERHASIL DIKIRIM
+==================================================
+
+==================================================
+TIPE        : [REPLY]
+WAKTU KIRIM : 2026-06-23 05:24:06
+KEPADA      : anggarenosugiarto@gmail.com
+PENGIRIM    : Ren Sugiarto <anggarenosugiarto@gmail.com>
+SUBJEK      : Tanya Harga Flotation Reagents
+PESAN       : (Balasan konfirmasi dikirim ke user)
+STATUS      : ✅ BERHASIL DIKIRIM
+==================================================
+
+==================================================
+TIPE        : [ADMIN]
+WAKTU KIRIM : 2026-06-23 05:27:38
+KEPADA      : anggarenosugiarto@gmail.com
+PENGIRIM    : Angga Reno <angga.reno99@gmail.com>
+SUBJEK      : 08996380260
+PESAN       : Mau tanya soal kapur
+STATUS      : ✅ BERHASIL DIKIRIM
+==================================================
+
+==================================================
+TIPE        : [REPLY]
+WAKTU KIRIM : 2026-06-23 05:27:41
+KEPADA      : angga.reno99@gmail.com
+PENGIRIM    : Angga Reno <angga.reno99@gmail.com>
+SUBJEK      : 08996380260
+PESAN       : (Balasan konfirmasi dikirim ke user)
+STATUS      : ✅ BERHASIL DIKIRIM
+==================================================
+
+==================================================
+TIPE        : [ADMIN]
+WAKTU KIRIM : 2026-06-23 07:10:56
+KEPADA      : anggarenosugiarto@gmail.com
+PENGIRIM    : Angga Reno <angga.reno99@gmail.com>
+SUBJEK      : 08996380260
+PESAN       : Mau tanya soal kapur23
+STATUS      : ✅ BERHASIL DIKIRIM
+==================================================
+
+==================================================
+TIPE        : [REPLY]
+WAKTU KIRIM : 2026-06-23 07:11:00
+KEPADA      : angga.reno99@gmail.com
+PENGIRIM    : Angga Reno <angga.reno99@gmail.com>
+SUBJEK      : 08996380260
+PESAN       : (Balasan konfirmasi dikirim ke user)
+STATUS      : ✅ BERHASIL DIKIRIM
+==================================================
+
+==================================================
+TIPE        : [ADMIN]
+WAKTU KIRIM : 2026-06-23 07:14:26
+KEPADA      : anggarenosugiarto@gmail.com
+PENGIRIM    : Angga Reno <angga.reno99@gmail.com>
+SUBJEK      : Mau tanya soal kapur 1234
+PESAN       : apaa ajaa dah
+STATUS      : ✅ BERHASIL DIKIRIM
+==================================================
+
+==================================================
+TIPE        : [REPLY]
+WAKTU KIRIM : 2026-06-23 07:14:30
+KEPADA      : angga.reno99@gmail.com
+PENGIRIM    : Angga Reno <angga.reno99@gmail.com>
+SUBJEK      : Mau tanya soal kapur 1234
+PESAN       : (Balasan konfirmasi dikirim ke user)
+STATUS      : ✅ BERHASIL DIKIRIM
+==================================================
+

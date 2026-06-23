@@ -794,7 +794,11 @@
                   <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-6">
+                  <input type="tel" class="form-control" name="phone" placeholder="Phone / WhatsApp (e.g. 08xx)" pattern="[0-9+\-\s()]+" required="">
+                </div>
+
+                <div class="col-md-6">
                   <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
                 </div>
 

@@ -54,11 +54,17 @@ try {
             user_id INTEGER,
             name TEXT NOT NULL,
             email TEXT NOT NULL,
+            phone TEXT,
             subject TEXT NOT NULL,
             message TEXT NOT NULL,
             sent_at DATETIME DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
         )");
+        // Migrate existing table: add phone column if missing (SQLite)
+        $cols = array_column($pdo->query("PRAGMA table_info(contact_messages)")->fetchAll(), 'name');
+        if (!in_array('phone', $cols)) {
+            $pdo->exec("ALTER TABLE contact_messages ADD COLUMN phone TEXT");
+        }
     } else {
         // MySQL: Users table
         $pdo->exec("CREATE TABLE IF NOT EXISTS users (
@@ -75,11 +81,17 @@ try {
             user_id INT NULL,
             name VARCHAR(255) NOT NULL,
             email VARCHAR(255) NOT NULL,
+            phone VARCHAR(20) NULL,
             subject VARCHAR(255) NOT NULL,
             message TEXT NOT NULL,
             sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
+        // Migrate existing table: add phone column if missing (MySQL)
+        $cols = $pdo->query("SHOW COLUMNS FROM contact_messages LIKE 'phone'")->fetchAll();
+        if (empty($cols)) {
+            $pdo->exec("ALTER TABLE contact_messages ADD COLUMN phone VARCHAR(20) NULL AFTER email");
+        }
     }
 } catch (PDOException $e) {
     die("Table creation failed: " . $e->getMessage());
