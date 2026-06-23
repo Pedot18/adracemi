@@ -1,445 +1,1094 @@
+/* ===========================================================
+   ADRA CUSTOM CSS - Properly integrated with main.css vars
+   =========================================================== */
+
+/* ── 0. Service card image container ─────────────────────── */
+.service-item .img {
+  width: 100%;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--surface-color);
+}
+
+.service-item .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.services .service-item:hover .img img {
+  transform: scale(1.06);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CHEMICAL DESIGN ELEMENTS — Honeycomb + Molecule + Wave
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Honeycomb Hexagon Grid ─────────────────────────────────── */
+.chem-hexgrid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.chex {
+  position: absolute;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  border: 2px solid rgba(0, 123, 255, 0.18);
+  background: rgba(0, 123, 255, 0.04);
+  animation: hexDrift ease-in-out infinite;
+}
+
+/* Individual hex positions — stay strictly in left 35% to avoid text overlap */
+.chex-1 {
+  width: 110px;
+  height: 95px;
+  top: 12%;
+  left: 4%;
+  animation-duration: 14s;
+  animation-delay: 0s;
+}
+
+.chex-2 {
+  width: 70px;
+  height: 61px;
+  top: 58%;
+  left: 9%;
+  animation-duration: 19s;
+  animation-delay: -4s;
+  opacity: 0.7;
+}
+
+.chex-3 {
+  width: 130px;
+  height: 113px;
+  top: 8%;
+  left: 22%;
+  animation-duration: 23s;
+  animation-delay: -8s;
+  opacity: 0.45;
+}
+
+.chex-4 {
+  width: 55px;
+  height: 48px;
+  top: 72%;
+  left: 30%;
+  animation-duration: 11s;
+  animation-delay: -2s;
+  opacity: 0.7;
+}
+
+.chex-5 {
+  width: 90px;
+  height: 78px;
+  top: 35%;
+  left: 2%;
+  animation-duration: 17s;
+  animation-delay: -6s;
+}
+
+.chex-6 {
+  width: 50px;
+  height: 43px;
+  top: 82%;
+  left: 18%;
+  animation-duration: 21s;
+  animation-delay: -10s;
+  opacity: 0.6;
+}
+
+.chex-7 {
+  width: 65px;
+  height: 56px;
+  top: 48%;
+  left: 33%;
+  animation-duration: 15s;
+  animation-delay: -3s;
+  opacity: 0.35;
+}
+
+@keyframes hexDrift {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  30% {
+    transform: translateY(-18px) rotate(8deg);
+  }
+
+  70% {
+    transform: translateY(10px) rotate(-5deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* Dark mode: slightly brighter hex outlines */
+body.dark-mode .chex {
+  border-color: rgba(96, 165, 250, 0.2);
+  background: rgba(96, 165, 250, 0.05);
+}
+
+/* ── Floating Molecule Network ──────────────────────────────── */
+.mol-float {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mol-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.4);
+  animation: molPulse ease-in-out infinite;
+}
+
+/* Dot sizes and positions */
+.mf-1 {
+  width: 12px;
+  height: 12px;
+  top: 25%;
+  left: 8%;
+  animation-duration: 3s;
+  animation-delay: 0s;
+}
+
+.mf-2 {
+  width: 8px;
+  height: 8px;
+  top: 42%;
+  left: 16%;
+  animation-duration: 4s;
+  animation-delay: -1s;
+}
+
+.mf-3 {
+  width: 10px;
+  height: 10px;
+  top: 32%;
+  left: 28%;
+  animation-duration: 3.5s;
+  animation-delay: -2s;
+}
+
+.mf-4 {
+  width: 7px;
+  height: 7px;
+  top: 55%;
+  left: 6%;
+  animation-duration: 5s;
+  animation-delay: -0.5s;
+}
+
+.mol-bond {
+  position: absolute;
+  height: 1.5px;
+  background: linear-gradient(90deg, rgba(0, 123, 255, 0.5), rgba(0, 123, 255, 0.1));
+  transform-origin: left center;
+  animation: bondFade ease-in-out infinite;
+}
+
+/* Bond positions connecting the dots */
+.mol-b1 {
+  top: calc(25% + 6px);
+  left: calc(8% + 12px);
+  width: 100px;
+  transform: rotate(18deg);
+  animation-duration: 3s;
+}
+
+.mol-b2 {
+  top: calc(32% + 5px);
+  left: calc(16% + 8px);
+  width: 80px;
+  transform: rotate(-25deg);
+  animation-duration: 4s;
+  animation-delay: -1s;
+}
+
+.mol-b3 {
+  top: calc(42% + 4px);
+  left: calc(16% + 8px);
+  width: 90px;
+  transform: rotate(50deg);
+  animation-duration: 3.5s;
+  animation-delay: -2s;
+}
+
+@keyframes molPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.6);
+    opacity: 0.4;
+  }
+}
+
+@keyframes bondFade {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.15;
+  }
+}
+
+body.dark-mode .mol-dot {
+  background: rgba(96, 165, 250, 0.6);
+  box-shadow: 0 0 14px rgba(96, 165, 250, 0.5);
+}
+
+body.dark-mode .mol-bond {
+  background: linear-gradient(90deg, rgba(96, 165, 250, 0.5), rgba(96, 165, 250, 0.05));
+}
+
+/* ── Wave Section Divider at bottom of hero ─────────────────── */
+.hero-wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 3;
+  /* above image panel */
+  pointer-events: none;
+}
+
+.hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 70px;
+}
+
+/* ── CRITICAL: Hero image panel — absolute inside section ─────── */
+/* Panel is outside Bootstrap container, bleeds flush to right edge */
+
+.hero-image-panel {
+  position: absolute;
+  top: 100px;
+  /* sedikit margin atas agar tidak mentok header */
+  right: 0;
+  bottom: 30px;
+  /* sedikit margin bawah */
+  width: 49%;
+  /* diperkecil dari 50% → 44% */
+  z-index: 1;
+}
+
+.hero-img-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../img/Updatebackground.jpeg');
+  background-size: cover;
+  background-position: center center;
+  border-radius: 20px 0 0 20px;
+  box-shadow: -12px 0 50px rgba(0, 123, 255, 0.10);
+}
+
+/* Badge: centered at the bottom of the image panel */
+.glass-badge.floating-badge {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  white-space: nowrap;
+}
+
+/* Text column height matches the section */
+.hero-text-col {
+  min-height: 65vh;
+  padding-right: 40px;
+}
+
+@media (max-width: 991px) {
+  .hero-image-panel {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 260px;
+    order: -1;
+    overflow: hidden;
+  }
+
+  .hero-img-bg {
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0, 123, 255, 0.12);
+  }
+
+  .hero-text-col {
+    min-height: auto;
+    padding-right: 0;
+  }
+
+  .glass-badge.floating-badge {
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-image-panel {
+    height: 200px;
+  }
+}
+
+/* ── 1. Accent color override: ganti oranye → biru ACC ── */
+:root {
+  --accent-color: #007BFF;
+  --nav-hover-color: #007BFF;
+  --nav-dropdown-hover-color: #007BFF;
+}
+
+/* ── 2. Smooth theme transition ─────────────────────────── */
+body,
+section,
+header,
+footer,
+div.service-item,
+div.stats-item,
+.services-list,
+.services-list a,
+.contact .info-item,
+.contact .php-email-form {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ── 3. Dark mode CSS variable overrides ──────────────────── */
+body.dark-mode {
+  --background-color: #0f172a !important;
+  --default-color: #cbd5e1 !important;
+  --heading-color: #f8fafc !important;
+  --surface-color: #1e293b !important;
+  --contrast-color: #0f172a !important;
+  --nav-color: #e2e8f0 !important;
+  --nav-dropdown-background-color: #1e293b !important;
+  --nav-dropdown-color: #ffffff !important;
+  --nav-mobile-background-color: #1e293b !important;
+}
+
+body.dark-mode .light-background {
+  --background-color: #111827 !important;
+  --surface-color: #1e293b !important;
+}
+
+body.dark-mode .dark-background {
+  --background-color: #020617 !important;
+}
+
+/* ── 3b. Dark mode: About section (Company Overview + Vision/Mission) ── */
+/* Bootstrap .text-muted uses a fixed semi-transparent color that becomes   */
+/* near-invisible on dark backgrounds. Override explicitly for dark mode.   */
+body.dark-mode .about p.text-muted,
+body.dark-mode .about ul.text-muted li,
+body.dark-mode .about ul.text-muted {
+  color: #94a3b8 !important;
+  /* slate-400 — readable on dark but still muted */
+}
+
+body.dark-mode .about h3 {
+  color: #f1f5f9 !important;
+  /* near-white heading */
+}
+
+body.dark-mode .about .content ul li span {
+  color: #94a3b8 !important;
+}
+
+/* Force normal font style and justified alignment for Vision/Mission text */
+.about p.text-muted,
+.about .content ul li span {
+  font-style: normal !important;
+  text-align: justify;
+  display: inline;
+}
+
+.about .content ul li {
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+/* The check-circle icon should use the accent blue, not be invisible */
+body.dark-mode .about .bi-check-circle-fill {
+  color: #60a5fa !important;
+  /* blue-400 — visible on dark */
+}
+
+/* ── 4. Logo ─────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 50px;
+}
+
+.logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2b8f1d;
+  position: relative;
+  z-index: 2;
+  margin: 3px 0;
+}
+
+.arc-top {
+  width: 100px;
+  height: 22px;
+  margin-bottom: 0;
+}
+
+.arc-bottom {
+  width: 100px;
+  height: 22px;
+  margin-top: 0;
+}
+
+.arc-top path,
+.arc-bottom path {
+  stroke-width: 8px;
+  stroke: #007BFF;
+}
+
+/* ── 5. Glassmorphism Header ──────────────────────────────── */
+.header {
+  --background-color: rgba(255, 255, 255, 0.85) !important;
+  /* Fix nav text: override the default white (#e5eaee) nav color
+     so links are readable on the white/light header background */
+  --nav-color: #1e293b !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 4px 24px rgba(0, 123, 255, 0.08) !important;
+  border-bottom: 1px solid rgba(0, 123, 255, 0.06);
+}
+
+/* Ensure nav links are dark in light mode */
+.header .navmenu a,
+.header .navmenu a:focus {
+  color: #1e293b !important;
+}
+
+.header .navmenu a:hover,
+.header .navmenu li:hover>a,
+.header .navmenu .active {
+  color: #007BFF !important;
+}
+
+.header .mobile-nav-toggle {
+  color: #1e293b !important;
+}
+
+body.dark-mode .header {
+  --background-color: rgba(15, 23, 42, 0.88) !important;
+  --nav-color: #e2e8f0 !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.dark-mode .header .navmenu a,
+body.dark-mode .header .navmenu a:focus {
+  color: #e2e8f0 !important;
+}
+
+body.dark-mode .header .navmenu a:hover,
+body.dark-mode .header .navmenu li:hover>a,
+body.dark-mode .header .navmenu .active {
+  color: #60a5fa !important;
+}
+
+body.dark-mode .header .mobile-nav-toggle {
+  color: #e2e8f0 !important;
+}
+
+.scrolled .header {
+  --background-color: rgba(255, 255, 255, 0.97) !important;
+}
+
+body.dark-mode .scrolled .header {
+  --background-color: rgba(15, 23, 42, 0.98) !important;
+}
+
+/* ── 6. Dark mode toggle switch ───────────────────────────── */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 32px;
+  margin-left: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #e2e8f0;
+  border-radius: 34px;
+  transition: .4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 4px;
+  bottom: 4px;
+  background: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background: #0f172a;
+}
+
+input:checked+.slider:before {
+  transform: translateX(28px);
+}
+
+.sun {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  font-size: 14px;
+  color: #f59e0b;
+}
+
+.moon {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  font-size: 14px;
+  color: #f59e0b;
+}
+
+/* ── 7. Modern Hero Section ───────────────────────────────── */
+.hero.modern-hero {
+  /* Reset the dark-background defaults for this section */
+  --background-color: #f0f6ff;
+  --default-color: #334155;
+  --heading-color: #0f172a;
+  min-height: 100vh;
+  padding: 140px 0 80px 0;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #f0f6ff 0%, #dbeafe 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Remove the pseudo-element from the base .hero (meant for image-bg hero) */
+.hero.modern-hero::before {
+  display: none;
+}
+
+body.dark-mode .hero.modern-hero {
+  --background-color: #0f172a;
+  --default-color: #cbd5e1;
+  --heading-color: #f8fafc;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+}
+
+/* Decorative background orbs */
+.hero.modern-hero::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.08) 0%, transparent 70%);
+  top: -150px;
+  right: -150px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero.modern-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: var(--heading-color);
+  /* Gradient text using brand colors */
+  background: linear-gradient(135deg, #007BFF, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  margin-bottom: 32px;
+  color: var(--default-color);
+  opacity: 0.85;
+}
+
+/* Modern Buttons */
+.modern-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #007BFF, #0ea5e9);
+  color: #ffffff !important;
+  padding: 14px 34px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.35);
+}
+
+.modern-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.45);
+  color: #ffffff !important;
+}
+
+.modern-btn-outline {
+  display: inline-block;
+  border: 2px solid #007BFF;
+  color: #007BFF !important;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.modern-btn-outline:hover {
+  background: rgba(0, 123, 255, 0.08);
+  transform: translateY(-3px);
+  color: #007BFF !important;
+}
+
+body.dark-mode .modern-btn-outline {
+  border-color: #60a5fa;
+  color: #60a5fa !important;
+}
+
+body.dark-mode .modern-btn-outline:hover {
+  color: #60a5fa !important;
+}
+
+
+/* Floating glassmorphism badge - base style */
+/* (position overridden by .glass-badge.floating-badge at top of file) */
+.glass-badge {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 14px 22px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #0f172a;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  animation: floatBadge 4s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+body.dark-mode .glass-badge {
+  background: rgba(30, 41, 59, 0.82);
+  color: #f8fafc;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+@keyframes floatBadge {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Mobile hero text sizes */
+@media (max-width: 991px) {
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero.modern-hero {
+    padding: 120px 0 60px 0;
+  }
+
+  .hero-image-wrapper {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .modern-btn,
+  .modern-btn-outline {
+    padding: 11px 22px;
+    font-size: 0.875rem;
+  }
+}
+
+/* ── About: View Button (ganti Play icon) ───────────────────── */
+.view-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 123, 255, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 22px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+  transition: all 0.3s ease;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.view-btn:hover {
+  background: rgba(0, 123, 255, 1);
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.5);
+  color: #ffffff;
+}
+
+.view-btn i {
+  line-height: 0;
+}
+
+/* ── 8. Services Section Background ────────────────────────── */
 #services {
   position: relative;
-   background-image: url('assets/img/bg17373.jpg') !important;
+  background-image: url('../img/bg17373.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* Overlay dengan warna abu-abu lebih terang */
 #services::before {
   content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: rgba(255, 255, 255, 0.88);
+}
+
+#services .container,
+#services .container-fluid {
+  position: relative;
+  z-index: 2;
+}
+
+body.dark-mode #services::before {
+  background-color: rgba(15, 23, 42, 0.92) !important;
+}
+
+/* ── 9. Modern Services Cards ───────────────────────────────── */
+.services .service-item {
+  border-radius: 20px !important;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06) !important;
+  border: 1px solid rgba(0, 123, 255, 0.06);
+  background-color: var(--surface-color);
+}
+
+.services .service-item:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: 0 20px 45px rgba(0, 123, 255, 0.14) !important;
+}
+
+.services .details {
+  background: var(--surface-color) !important;
+  border-radius: 0 0 20px 20px !important;
+  padding: 60px 24px 28px !important;
+  text-align: center;
+}
+
+.services .details .icon {
+  background: linear-gradient(135deg, #007BFF, #0ea5e9) !important;
+  border: 4px solid var(--surface-color) !important;
+  box-shadow: 0 4px 16px rgba(0, 123, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.services .service-item:hover .details .icon {
+  transform: scale(1.08) !important;
+  box-shadow: 0 8px 24px rgba(0, 123, 255, 0.45);
+}
+
+.services .service-item:hover .details .icon i {
+  color: #fff !important;
+}
+
+/* ── 10. Modern Stats Items ─────────────────────────────────── */
+.stats .stats-item {
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 123, 255, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--surface-color);
+}
+
+.stats .stats-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 123, 255, 0.12) !important;
+}
+
+/* ── 11. Section title accent override ─────────────────────── */
+.section-title h2::after {
+  background: #007BFF;
+}
+
+/* ── 12. WhatsApp Float Button ──────────────────────────────── */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* ── 13. Service detail page animations ─────────────────────── */
+.service-details {
+  position: relative;
+  overflow: hidden;
+}
+
+.molecule-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
-  background-color: rgba(255, 255, 255, 0.85); /* Light mode wash out */
 }
 
-/* Pastikan konten tetap terlihat di atas overlay */
-#services .container {
+.service-details .container {
   position: relative;
-  z-index: 12;
+  z-index: 2;
 }
 
-/* Smooth theme transition */
-body, section, header, footer, div.service-item, div.stats-item, div.portfolio-item, .services-list, .services-list a, .contact .info-item, .contact .php-email-form {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+.hex {
+  position: absolute;
+  width: 150px;
+  height: 85px;
+  border: 4px solid rgba(0, 123, 255, 0.15);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  animation: floatHex 12s ease-in-out infinite;
 }
 
-
-  /* ini buat togle dask mode */
-      .switch{
-      position:relative;
-      display:inline-block;
-      width:60px;
-      height:32px;
-      margin-left:20px;
-    }
-
-    .switch input{
-      opacity:0;
-      width:0;
-      height:0;
-    }
-
-    .slider{
-      position:absolute;
-      cursor:pointer;
-      top:0;
-      left:0;
-      right:0;
-      bottom:0;
-
-      background:#e2e8f0;
-      border-radius:34px;
-
-      transition:.4s;
-    }
-
-    .slider:before{
-      content:"";
-      position:absolute;
-
-      width:24px;
-      height:24px;
-
-      left:4px;
-      bottom:4px;
-
-      background:white;
-      border-radius:50%;
-
-      transition:.4s;
-    }
-
-    input:checked + .slider{
-      background:#0F172A;
-    }
-
-    input:checked + .slider:before{
-      transform:translateX(28px);
-    }
-
-    .sun{
-      position:absolute;
-      left:8px;
-      top:8px;
-      font-size:14px;
-      color:#f59e0b;
-    }
-
-    .moon{
-      position:absolute;
-      right:8px;
-      top:8px;
-      font-size:14px;
-      color:#f59e0b;
-    }
-
-    /* css nya */
-    /* Dark mode specific overrides */
-    body.dark-mode #services::before {
-      background-color: rgba(15, 23, 42, 0.9) !important;
-    }
-
-/* animation */
-.service-details{
-
-    position:relative;
-
-    overflow:hidden;
-
+.h1 {
+  top: 10%;
+  left: 5%;
 }
 
-.molecule-bg{
-
-    position:absolute;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    height:100%;
-
-    z-index:0;
-
+.h2 {
+  top: 40%;
+  right: 10%;
+  animation-duration: 15s;
 }
 
-.service-details .container{
-
-    position:relative;
-
-    z-index:2;
-
+.h3 {
+  bottom: 20%;
+  left: 20%;
 }
 
-.hex{
-
-    position:absolute;
-
-    width:150px;
-
-    height:85px;
-
-    border:4px solid rgba(77,91,168,.2);
-
-    clip-path: polygon(
-      25% 0%,
-      75% 0%,
-      100% 50%,
-      75% 100%,
-      25% 100%,
-      0% 50%
-    );
-
-    animation: floatHex 12s ease-in-out infinite;
-
+.h4 {
+  bottom: 5%;
+  right: 25%;
+  animation-duration: 18s;
 }
 
-.h1{
+@keyframes floatHex {
 
-    top:10%;
+  0%,
+  100% {
+    transform: translateY(0);
+  }
 
-    left:5%;
-
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
-.h2{
-
-    top:40%;
-
-    right:10%;
-
-    animation-duration:15s;
-
+.molecule-network {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: .2;
 }
 
-.h3{
-
-    bottom:20%;
-
-    left:20%;
-
+.atom {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #007BFF;
+  animation: pulse 3s infinite ease-in-out;
 }
 
-.h4{
-
-    bottom:5%;
-
-    right:25%;
-
-    animation-duration:18s;
-
+.a1 {
+  top: 20%;
+  left: 10%;
 }
 
-@keyframes floatHex{
-
-    0%{
-
-        transform:translateY(0px);
-
-    }
-
-    50%{
-
-        transform:translateY(-20px);
-
-    }
-
-    100%{
-
-        transform:translateY(0px);
-
-    }
-
+.a2 {
+  top: 35%;
+  left: 20%;
 }
 
-.service-details{
-
-    position:relative;
-
-    overflow:hidden;
-
+.a3 {
+  top: 25%;
+  left: 35%;
 }
 
-.molecule-network{
-
-    position:absolute;
-
-    inset:0;
-
-    z-index:0;
-
-    opacity:.2;
-
+.a4 {
+  top: 50%;
+  left: 25%;
 }
 
-.service-details .container{
-
-    position:relative;
-
-    z-index:2;
-
+.bond {
+  position: absolute;
+  height: 2px;
+  background: #007BFF;
+  transform-origin: left center;
 }
 
-
-/* ATOM */
-
-.atom{
-
-    position:absolute;
-
-    width:14px;
-
-    height:14px;
-
-    border-radius:50%;
-
-    background:#0ea5e9;
-
-    animation:pulse 3s infinite ease-in-out;
-
+.b1 {
+  top: 22%;
+  left: 11%;
+  width: 120px;
+  transform: rotate(25deg);
 }
 
-.a1{
-
-    top:20%;
-
-    left:10%;
-
+.b2 {
+  top: 33%;
+  left: 21%;
+  width: 100px;
+  transform: rotate(-15deg);
 }
 
-.a2{
-
-    top:35%;
-
-    left:20%;
-
+.b3 {
+  top: 30%;
+  left: 27%;
+  width: 90px;
+  transform: rotate(60deg);
 }
 
-.a3{
-
-    top:25%;
-
-    left:35%;
-
+.service-details::before {
+  content: "⚗";
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 300px;
+  color: #007BFF;
+  opacity: .025;
+  z-index: 0;
 }
 
-.a4{
-
-    top:50%;
-
-    left:25%;
-
+.service-details::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  right: -100px;
+  bottom: -100px;
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.07) 0%, transparent 70%);
+  animation: floatParticle 8s ease-in-out infinite;
+  z-index: 0;
 }
 
+@keyframes floatParticle {
 
-/* GARIS */
+  0%,
+  100% {
+    transform: translateY(0);
+  }
 
-.bond{
-
-    position:absolute;
-
-    height:2px;
-
-    background:#0ea5e9;
-
-    transform-origin:left center;
-
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
-.b1{
+@keyframes pulse {
 
-    top:22%;
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 
-    left:11%;
-
-    width:120px;
-
-    transform:rotate(25deg);
-
-}
-
-.b2{
-
-    top:33%;
-
-    left:21%;
-
-    width:100px;
-
-    transform:rotate(-15deg);
-
-}
-
-.b3{
-
-    top:30%;
-
-    left:27%;
-
-    width:90px;
-
-    transform:rotate(60deg);
-
-}
-
-
-/* ANIMASI */
-.service-details{
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-/* Molecule besar transparan */
-
-.service-details::before{
-
-    content:"⚗";
-
-    position:absolute;
-
-    right:5%;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    font-size:300px;
-
-    color:#0ea5e9;
-
-    opacity:.03;
-
-    z-index:0;
-
-}
-
-/* Titik partikel */
-
-.service-details::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:500px;
-
-    height:500px;
-
-    right:-100px;
-
-    bottom:-100px;
-
-    background:
-
-      radial-gradient(
-        circle,
-        rgba(14,165,233,.08) 0%,
-
-        transparent 70%
-      );
-
-    animation:floatParticle 8s ease-in-out infinite;
-
-    z-index:0;
-
-}
-
-.service-details .container{
-
-    position:relative;
-
-    z-index:2;
-
-}
-
-@keyframes floatParticle{
-
-    0%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-20px);
-
-    }
-
-    100%{
-
-        transform:translateY(0);
-
-    }
-
+  50% {
+    transform: scale(1.4);
+    opacity: 0.7;
+  }
 }

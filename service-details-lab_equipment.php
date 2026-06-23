@@ -22,6 +22,17 @@
     <!-- Service Details Section -->
     <section id="service-details" class="service-details section">
     
+      <!-- ═══ Chemical honeycomb hex decorations (pure CSS) ═══ -->
+      <div class="chem-hexgrid" aria-hidden="true">
+        <div class="chex chex-1"></div>
+        <div class="chex chex-2"></div>
+        <div class="chex chex-3"></div>
+        <div class="chex chex-4"></div>
+        <div class="chex chex-5"></div>
+        <div class="chex chex-6"></div>
+        <div class="chex chex-7"></div>
+      </div>
+
     <div class="molecule-network">
       <div class="atom a1"></div>
       <div class="atom a2"></div>

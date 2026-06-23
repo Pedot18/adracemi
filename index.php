@@ -1,14 +1,57 @@
 <?php include("header.php"); ?>
     <main class="main">
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-      <img src="assets/img/Updatebackground.jpeg" style="max-width: 100%; height: 100%;" alt="" data-aos="fade-in" >
-      <div class="container d-flex flex-column align-items-center">
-        <h2 data-aos="fade-up" data-aos-delay="100">PT Adra Cipta Chemindo</h2>
-        <p data-aos="fade-up" data-aos-delay="200">Distribusi Bahan Kimia untuk Berbagai Industri</p>
-        <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
-          <a href="#about" class="btn-get-started">Get Started</a>
+    <section id="hero" class="hero section modern-hero">
+
+      <!-- ═══ Chemical honeycomb hex decorations (pure CSS) ═══ -->
+      <div class="chem-hexgrid" aria-hidden="true">
+        <div class="chex chex-1"></div>
+        <div class="chex chex-2"></div>
+        <div class="chex chex-3"></div>
+        <div class="chex chex-4"></div>
+        <div class="chex chex-5"></div>
+        <div class="chex chex-6"></div>
+        <div class="chex chex-7"></div>
+      </div>
+
+      <!-- ═══ Floating molecule dots (left side decoration) ═══ -->
+      <div class="mol-float" aria-hidden="true">
+        <div class="mol-dot mf-1"></div>
+        <div class="mol-dot mf-2"></div>
+        <div class="mol-dot mf-3"></div>
+        <div class="mol-dot mf-4"></div>
+        <div class="mol-bond mol-b1"></div>
+        <div class="mol-bond mol-b2"></div>
+        <div class="mol-bond mol-b3"></div>
+      </div>
+
+      <!-- Image panel outside the container so it bleeds flush to right viewport edge -->
+      <div class="hero-image-panel" data-aos="fade-left" data-aos-delay="200">
+        <div class="hero-img-bg"></div>
+        <div class="glass-badge floating-badge">
+          <i class="bi bi-shield-check-fill text-primary me-2"></i> Kualitas Terjamin
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 d-flex flex-column justify-content-center text-center text-lg-start hero-text-col">
+            <h1 data-aos="fade-up" data-aos-delay="100" class="hero-title">PT Adra Cipta Chemindo</h1>
+            <p data-aos="fade-up" data-aos-delay="200" class="hero-subtitle">Distributor Bahan Kimia Terpercaya untuk Berbagai Sektor Industri.</p>
+            <div class="d-flex justify-content-center justify-content-lg-start mt-4" data-aos="fade-up" data-aos-delay="300">
+              <a href="#about" class="btn-get-started modern-btn">Get Started</a>
+              <a href="#services" class="btn-outline modern-btn-outline ms-3">Lihat Produk</a>
+            </div>
           </div>
+          <div class="col-lg-6"></div>
+        </div>
+      </div>
+
+      <!-- Wave divider at bottom of hero -->
+      <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,40 C360,90 1080,-10 1440,40 L1440,80 L0,80 Z" fill="var(--background-color)"/>
+        </svg>
       </div>
 
     </section><!-- /Hero Section -->
@@ -18,10 +61,10 @@
       <div class="container">
 
         <div class="row gy-4">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3>COMPANY OVERVIEW </h3>
+          <div class="col-lg-6 pe-lg-5" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="mb-4">COMPANY OVERVIEW </h3>
             
-            <p>PT. ADRA CIPTA CHEMINDO specializes and engages in the distribution of
+            <p class="text-muted lh-lg">PT. ADRA CIPTA CHEMINDO specializes and engages in the distribution of
             chemical for industries such as mining/mineral processing, oil and gas,
             drilling, cosmetics, pharmaceuticals, rubber, soap, detergent, water
             treatment, plastic resin, compound plastic, Thermo Plastic Rubber (TPR),
@@ -33,25 +76,28 @@
             chemical, shoes industries, and many mores.
             </p>
             <div class="position-relative mt-4">
-                <img src="assets/img/Struktur.png" class="img-fluid rounded-4" alt="">
-                <a href="assets/img/Struktur.png" class="glightbox pulsating-play-btn"></a>
-                <a href="assets/img/sertifikasi.jpeg" class="glightbox"></a>
-                <a href="assets/img/sertifikasi2.jpeg" class="glightbox"></a>
+                <img src="assets/img/Struktur.png" class="img-fluid rounded-4" alt="Struktur Organisasi">
+                <!-- View icon: ganti dari icon Play ke icon Eye/View -->
+                <a href="assets/img/Struktur.png" class="glightbox view-btn" title="Lihat Gambar">
+                  <i class="bi bi-eye-fill"></i>
+                </a>
+                <a href="assets/img/sertifikasi.jpeg" class="glightbox" style="display:none"></a>
+                <a href="assets/img/sertifikasi2.jpeg" class="glightbox" style="display:none"></a>
               </div>
               
             
           </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
             <div class="content ps-0 ps-lg-5">
-              <h3>Vision</h3>
-              <p >
+              <h3 class="mb-3">Vision</h3>
+              <p class="text-muted lh-lg">
                 Became the number one Chemical company in Indonesia which has International class capabilities, provides the best product and service to customers, operating with optimum profitability, and running by the capable human resources
               </p>
               
-                 <h3>Mision</h3>
-              <ul>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Doing the Business transformation from product based selling to the service based and providing the service who give the added value and product innovation improvement to all customers with growing together spirit. </span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Achieve all setting targets in order to produce the optimum profitability. 3.Develop the human resources with highly competency and integrity to work together according to the company values with aiming the best result spirit. 4.Produce the derivative products or new products based on the continuous innovation which supported by the updating technology</span></li>
+                 <h3 class="mb-3 mt-4">Mission</h3>
+              <ul class="text-muted lh-lg list-unstyled">
+                <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i> <span>Doing the Business transformation from product based selling to the service based and providing the service who give the added value and product innovation improvement to all customers with growing together spirit. </span></li>
+                <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i> <span>Achieve all setting targets in order to produce the optimum profitability. 3.Develop the human resources with highly competency and integrity to work together according to the company values with aiming the best result spirit. 4.Produce the derivative products or new products based on the continuous innovation which supported by the updating technology</span></li>
               </ul>
               </div>
             </div>
@@ -62,23 +108,6 @@
     </section><!-- /About Section -->
 
     
-    <style>
-        .service-item .img {
-      width: 100%;
-      height: 250px; /* Sesuaikan tinggi sesuai kebutuhan */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    
-    .service-item .img img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* Bisa juga pakai 'cover' tergantung kebutuhan */
-    }
-
-    </style>
 
     <!-- Services Section -->
     <section id="services" class="services section ">
